@@ -21,7 +21,7 @@ if (path.isfile("fashion_model.keras")):
 else :
   model = keras.models.Sequential([
     layers.Flatten(), 
-    layers.Dense(128, activation="relu"), 
+    layers.Dense(256, activation="relu"), 
     layers.Dense(10, activation="softmax")
   ])
 
