@@ -1,6 +1,7 @@
 import tensorflow as tf
 import keras 
 from keras import layers
+import numpy as np
 import matplotlib.pyplot as plt
 
 import os.path as path
@@ -38,5 +39,13 @@ model.evaluate(test_images, test_labels)
 model.save("fashion_model.keras")
 
 classifications = model.predict(test_images)
-print(classifications[8])
-print(class_names[test_labels[8]])
+
+t= 2
+print(classifications[t])
+print("L'image correspond à " + str(100*np.max(classifications[t])) + "% à un(e) " + class_names[test_labels[t]])
+
+plt.figure()
+plt.imshow(test_images[t])
+plt.colorbar()
+plt.grid(False)
+plt.show()
